@@ -7,8 +7,8 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* empile titre + image + texte */
-            justify-content: flex-start; /* titre en haut */
+            flex-direction: column; /* empile titre + image + texte + deuxième image */
+            justify-content: flex-start; 
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -18,15 +18,15 @@
         }
 
         h1 {
-            font-style: italic;      /* italique */
-            text-decoration: underline; /* souligné */
+            font-style: italic;      
+            text-decoration: underline; 
             font-family: Arial, sans-serif;
             margin-bottom: 40px;
         }
 
         img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 85%;   /* élargi de 5% */
+            max-height: 85%;  /* élargi de 5% */
             border: 3px solid #333;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
@@ -36,18 +36,37 @@
             max-width: 80%;
             font-family: Arial, sans-serif;
             color: #222;
+            margin-bottom: 40px;
         }
     </style>
 </head>
 <body>
     <h1>Mairie Valréas</h1>
+
+    <!-- Première image -->
     <img src="image/Image.jpg" alt="Ma photo importée">
     <br><br><br>
+
+    <!-- Texte -->
     <h3>
         Voilà pourquoi cette région de Valréas était une enclave. 
         Et elle l'est restée, car après la Révolution, à la formation des départements, 
         la population de l'enclave fut consultée par référendum et se prononça 
         pour un rattachement au Vaucluse, et donc pour le fait d'être provençaux.
     </h3>
+
+    <!-- Deuxième image qui va changer -->
+    <img id="imageChangeante" src="image/photo2.jpg" alt="Image changeante">
+
+    <script>
+        // Tableau des images à alterner
+        const images = ["image/photo2.jpg", "image/photo3.jpg"];
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            document.getElementById("imageChangeante").src = images[index];
+        }, 10000); // 10000 ms = 10 secondes
+    </script>
 </body>
 </html>
