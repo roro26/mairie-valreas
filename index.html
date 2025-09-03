@@ -2,18 +2,26 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Affichage d'une image</title>
+    <title>Test Valreas</title> <!-- titre de l’onglet -->
     <meta http-equiv="refresh" content="60"> <!-- actualisation toutes les 60 secondes -->
     <style>
         body {
             display: flex;
-            flex-direction: column; /* permet d'empiler image + texte */
-            justify-content: center;
+            flex-direction: column; /* empile titre + image + texte */
+            justify-content: flex-start; /* titre en haut */
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #cccccc; /* gris plus soutenu */
             text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-style: italic;      /* italique */
+            text-decoration: underline; /* souligné */
+            font-family: Arial, sans-serif;
+            margin-bottom: 40px;
         }
 
         img {
@@ -32,6 +40,7 @@
     </style>
 </head>
 <body>
+    <h1>Mairie Valréas</h1>
     <img src="image/Image.jpg" alt="Ma photo importée">
     <br><br><br>
     <h3>
