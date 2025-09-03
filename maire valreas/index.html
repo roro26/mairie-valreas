@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Affichage d'une image</title>
+    <meta http-equiv="refresh" content="60"> <!-- actualisation toutes les 60 secondes -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* permet d'empiler image + texte */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #cccccc; /* gris plus soutenu */
+            text-align: center;
+        }
+
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 3px solid #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        h3 {
+            max-width: 80%;
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/Image.jpg" alt="Ma photo importée">
+    <br><br><br>
+    <h3>
+        Voilà pourquoi cette région de Valréas était une enclave. 
+        Et elle l'est restée, car après la Révolution, à la formation des départements, 
+        la population de l'enclave fut consultée par référendum et se prononça 
+        pour un rattachement au Vaucluse, et donc pour le fait d'être provençaux.
+    </h3>
+</body>
+</html>
