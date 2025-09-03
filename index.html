@@ -35,7 +35,7 @@
 
         /* Première photo uniquement */
         #premierePhoto {
-            max-width: 90%;   /* encore +5% */
+            max-width: 90%;   /* encore +5% pour la première image */
             max-height: 90%;
         }
 
@@ -46,7 +46,7 @@
             margin-bottom: 40px;
         }
 
-        /* Animation tourbillon */
+        /* Animation tourbillon pour changement de photo */
         @keyframes tourbillon {
             0% { transform: rotate(0deg) scale(0.8); opacity: 0; }
             50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
@@ -65,7 +65,7 @@
     <img id="premierePhoto" src="image/Image.jpg" alt="Ma photo importée">
     <br><br><br>
 
-    <!-- Texte -->
+    <!-- Texte explicatif -->
     <h3>
         Voilà pourquoi cette région de Valréas était une enclave. 
         Et elle l'est restée, car après la Révolution, à la formation des départements, 
@@ -73,7 +73,7 @@
         pour un rattachement au Vaucluse, et donc pour le fait d'être provençaux.
     </h3>
 
-    <!-- Deuxième image qui va changer -->
+    <!-- Deuxième image qui change toutes les 10 secondes -->
     <img id="imageChangeante" src="image/photo2.jpg" alt="Image changeante">
 
     <script>
