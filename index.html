@@ -10,7 +10,7 @@
             flex-direction: column; /* empile titre + image + texte + deuxième image */
             justify-content: flex-start; 
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #cccccc; /* gris plus soutenu */
             text-align: center;
@@ -30,6 +30,7 @@
             border: 3px solid #333;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform 1s ease, opacity 1s ease;
         }
 
         /* Première photo uniquement */
@@ -43,6 +44,17 @@
             font-family: Arial, sans-serif;
             color: #222;
             margin-bottom: 40px;
+        }
+
+        /* Animation tourbillon */
+        @keyframes tourbillon {
+            0% { transform: rotate(0deg) scale(0.8); opacity: 0; }
+            50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+            100% { transform: rotate(360deg) scale(1); opacity: 1; }
+        }
+
+        .tourbillon {
+            animation: tourbillon 1s ease forwards;
         }
     </style>
 </head>
@@ -65,14 +77,22 @@
     <img id="imageChangeante" src="image/photo2.jpg" alt="Image changeante">
 
     <script>
-        // Tableau des images à alterner
         const images = ["image/photo2.jpg", "image/photo3.jpg"];
         let index = 0;
+        const imgChangeante = document.getElementById("imageChangeante");
 
         setInterval(() => {
-            index = (index + 1) % images.length;
-            document.getElementById("imageChangeante").src = images[index];
-        }, 10000); // 10000 ms = 10 secondes
+            // Ajouter l'effet tourbillon
+            imgChangeante.classList.add("tourbillon");
+
+            // Après 1 seconde (durée de l'animation), changer l'image et retirer la classe
+            setTimeout(() => {
+                index = (index + 1) % images.length;
+                imgChangeante.src = images[index];
+                imgChangeante.classList.remove("tourbillon");
+            }, 1000);
+
+        }, 10000); // toutes les 10 secondes
     </script>
 </body>
 </html>
