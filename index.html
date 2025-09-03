@@ -25,11 +25,17 @@
         }
 
         img {
-            max-width: 85%;   /* élargi de 5% */
-            max-height: 85%;  /* élargi de 5% */
+            max-width: 85%;   /* toutes les photos +5% */
+            max-height: 85%;
             border: 3px solid #333;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        /* Première photo uniquement */
+        #premierePhoto {
+            max-width: 90%;   /* encore +5% */
+            max-height: 90%;
         }
 
         h3 {
@@ -43,8 +49,8 @@
 <body>
     <h1>Mairie Valréas</h1>
 
-    <!-- Première image -->
-    <img src="image/Image.jpg" alt="Ma photo importée">
+    <!-- Première image (plus grande que les autres) -->
+    <img id="premierePhoto" src="image/Image.jpg" alt="Ma photo importée">
     <br><br><br>
 
     <!-- Texte -->
