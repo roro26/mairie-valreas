@@ -25,12 +25,11 @@
         }
 
         img {
-            max-width: 200%;   /* toutes les photos x2 */
-            max-height: 200%;
+            transform: scale(2);   /* zoom x2 (200%) */
             border: 3px solid #333;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            transition: opacity 1s ease; /* transition pour fade-in / fade-out */
+            transition: opacity 1s ease;
         }
 
         h3 {
@@ -40,12 +39,10 @@
             margin-bottom: 40px;
         }
 
-        /* Classe pour cacher l'image progressivement */
         .fade-out {
             opacity: 0;
         }
 
-        /* Classe pour faire apparaître l'image progressivement */
         .fade-in {
             opacity: 1;
         }
@@ -75,23 +72,20 @@
         const imgChangeante = document.getElementById("imageChangeante");
 
         setInterval(() => {
-            // Faire disparaître l'image
             imgChangeante.classList.add("fade-out");
 
-            // Après 1 seconde (durée du fade-out), changer l'image et la faire apparaître
             setTimeout(() => {
                 index = (index + 1) % images.length;
                 imgChangeante.src = images[index];
                 imgChangeante.classList.remove("fade-out");
                 imgChangeante.classList.add("fade-in");
 
-                // Retirer la classe fade-in après la transition
                 setTimeout(() => {
                     imgChangeante.classList.remove("fade-in");
                 }, 1000);
             }, 1000);
 
-        }, 10000); // toutes les 10 secondes
+        }, 10000);
     </script>
 </body>
 </html>
